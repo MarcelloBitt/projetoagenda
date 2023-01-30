@@ -17,7 +17,7 @@ const flash = require("connect-flash");
 const routes = require("./routes");
 const path = require("path");
 const csrf = require("csurf");
-const { default: helmet } = require("helmet");
+// const { default: helmet } = require("helmet");
 const {
   middlewareGlobal,
   checkCrsfError,
@@ -39,7 +39,7 @@ const sessionOptions = session({
   store: MongoStore.create({ mongoUrl: process.env.CONNECTIONSTRING }),
 });
 
-app.use(helmet());
+// app.use(helmet());
 app.use(sessionOptions);
 app.use(flash());
 
